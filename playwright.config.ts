@@ -5,7 +5,7 @@ dotenv.config();
 type BrowserName = 'chromium' | 'firefox' | 'webkit';
 
 // Load environment variables
-const testSuite = process.env.TEST_SUITE || 'sanity'; // sanity or regression
+const testSuite = process.env.TEST_SUITE || ''; // sanity or regression
 const HEADLESS = process.env.HEADLESS !== 'false';
 const rawBrowser = process.env.BROWSER || 'chromium';
 const INCLUDE_TC = process.env.TC?.split(',') || [];

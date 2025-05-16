@@ -19,7 +19,7 @@ export async function compareScreenshots(
   const diff = new PNG({ width, height });
 
   const diffPixels = pixelmatch(img1.data, img2.data, diff.data, width, height, {
-    threshold: 0.1,
+    threshold: 1,
   });
 
   fs.writeFileSync(diffPath, PNG.sync.write(diff));

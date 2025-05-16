@@ -1,0 +1,20 @@
+{
+  "name": "canvas-test-framework",
+  "version": "1.0.0",
+  "description": "Canvas Testing Framework with Playwright",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "install": "npx playwright install"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.18.0",
+    "@types/node": "^22.15.17",
+    "@types/pixelmatch": "^5.2.6",
+    "pixelmatch": "^5.2.2",
+    "pngjs": "^6.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0"
+  }
+}

@@ -32,6 +32,15 @@ tldraw-playwright-ui-tests/
 ├── README.md
 └── package.json
 
+
+tests/: Contains the main test scripts.
+utils/: Houses utility functions and helpers.
+playwright-report/: Stores generated test reports.
+test-results/: Includes artifacts like screenshots and videos from test runs.
+playwright.config.ts: Configuration file for Playwright settings.
+.env: Environment variables for customizing test execution
+
+
 ## 🧪 How to Run the Tests
 
 ### 1️⃣ Install dependencies:

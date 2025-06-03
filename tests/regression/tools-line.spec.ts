@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test'; 
 import fs from 'fs';
 import path from 'path';
 import { saveScreenshot, compareScreenshots } from '../../utils/canvasUtils';
@@ -6,7 +6,6 @@ import { saveScreenshot, compareScreenshots } from '../../utils/canvasUtils';
 const screenshotRoot = 'screenshots';
 const dirs = ['before', 'after', 'comparison/passed', 'comparison/failed'];
 
-// Ensure folder structure exists
 test.beforeAll(() => {
   dirs.forEach(dir => {
     const fullPath = path.join(screenshotRoot, dir);
@@ -21,7 +20,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 const tests = [
-  { id: 'tc01', name: 'draw single line', run: async (page) => {
+  { id: 'tc01', name: 'Draw single line', run: async (page) => {
     await page.locator('div[style*="#chevron-up"]').click();
     await page.locator('div[style*="#tool-line"]:visible').first().click();
     await page.mouse.move(100, 100);
@@ -29,7 +28,7 @@ const tests = [
     await page.mouse.move(200, 200);
     await page.mouse.up();
   }},
-  { id: 'tc02', name: 'draw two lines in sequence', run: async (page) => {
+  { id: 'tc02', name: 'Draw two lines in sequence', run: async (page) => {
     for (let i = 1; i < 3; i++) {
       await page.locator('div[style*="#chevron-up"]').click();
       await page.locator('div[style*="#tool-line"]:visible').first().click();
@@ -67,10 +66,8 @@ for (const t of tests) {
     } else {
       console.warn(`❌ ${t.id} failed — ${diffPixels} pixels differ.`);
       expect(diffPixels, `${t.id} visual difference`).toBeLessThanOrEqual(MAX_ALLOWED_DIFF);
-   
     }
-});
-
+  });
 
   test.afterEach(async ({ page }) => {
     await page.context().clearCookies();

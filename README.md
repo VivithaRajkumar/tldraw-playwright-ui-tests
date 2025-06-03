@@ -48,13 +48,16 @@ playwright.config.ts: Configuration file for Playwright settings.
 ```bash
 npm install
 
+List all the tests selected for execution
+npx playwright test --list
+
 Run all tests:
 npx playwright test
 
 Run only a test suite:
 Edit .env:
 
-TEST_SUITE=regression
+TEST_SUITE=regression or sanity
 Then run:
 npm run test:filtered
 
